@@ -235,7 +235,7 @@ export default function About() {
                           Identity
                         </h5>
                         <p className="text-base font-extrabold text-white tracking-tight">
-                          Yehara Kobbagala
+                          Yehara Kobbegala
                         </p>
                       </div>
 

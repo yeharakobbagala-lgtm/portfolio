@@ -45,7 +45,7 @@ export default function Hero() {
 
           <ScrollReveal direction="up" delay={200}>
             <h1 className="text-4xl sm:text-6xl font-extrabold text-white tracking-tight leading-tight mb-4">
-              Hi, I&apos;m <span className="text-gradient-brand-primary">Yehara Kobbagala</span>
+              Hi, I&apos;m <span className="text-gradient-brand-primary">Yehara Kobbegala</span>
             </h1>
           </ScrollReveal>
 
@@ -157,7 +157,7 @@ export default function Hero() {
               <div className="relative w-full h-full rounded-full overflow-hidden border border-white/10 z-10">
                 <Image
                   src="/profile.png"
-                  alt="Yehara Kobbagala"
+                  alt="Yehara Kobbegala"
                   fill
                   priority
                   className="object-cover group-hover:scale-105 transition-transform duration-500"

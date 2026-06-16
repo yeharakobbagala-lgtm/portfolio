@@ -50,7 +50,7 @@ export default function Home() {
             </div>
 
             <div className="text-xs text-gray-400 font-mono text-center sm:text-right">
-              <p>© {currentYear} Yehara Kobbagala. All rights reserved.</p>
+              <p>© {currentYear} Yehara Kobbegala. All rights reserved.</p>
               <p className="text-gray-600 mt-1">
                 Built using Next.js, TailwindCSS v4 & custom keyframes.
               </p>
