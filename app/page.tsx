@@ -49,91 +49,130 @@ export default function Home() {
 
         {/* Ambient interactive floating items spread vertically */}
         
-        {/* Top / Hero area (0% - 25% height) */}
-        <FloatingParticle className="left-[4%] top-[7%] animate-float-slow w-6 h-6" colorClass="text-teal-400" glowColor="rgba(45,212,191,0.8)">
+        {/* Top / Hero area (0% - 15% height) */}
+        <FloatingParticle className="left-[3%] top-[4%] animate-float-slow w-6 h-6" colorClass="text-teal-400" glowColor="rgba(45,212,191,0.8)">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2"><path d="M12 3c0 4.5 3.5 8 8 8m-8-8c0 4.5-3.5 8-8 8m8 8c0-4.5 3.5-8 8-8m-8 8c0-4.5-3.5-8-8-8" /></svg>
         </FloatingParticle>
-        <FloatingParticle className="right-[7%] top-[11%] animate-float-medium w-5 h-5" colorClass="text-brand-purple" glowColor="rgba(181,95,230,0.8)">
+        <FloatingParticle className="right-[5%] top-[6%] animate-float-medium w-5 h-5" colorClass="text-brand-purple" glowColor="rgba(181,95,230,0.8)">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M12 3v18M3 12h18" /></svg>
         </FloatingParticle>
-        <FloatingParticle className="left-[22%] top-[14%] animate-float-medium w-5 h-5" colorClass="text-brand-lavender" glowColor="rgba(216,180,254,0.8)">
+        <FloatingParticle className="left-[18%] top-[9%] animate-float-medium w-5 h-5" colorClass="text-brand-lavender" glowColor="rgba(216,180,254,0.8)">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="8" strokeDasharray="3 3" /></svg>
         </FloatingParticle>
-        <FloatingParticle className="right-[19%] top-[19%] animate-float-slow w-7 h-7" colorClass="text-teal-300" glowColor="rgba(45,212,191,0.6)">
+        <FloatingParticle className="right-[15%] top-[12%] animate-float-slow w-7 h-7" colorClass="text-teal-300" glowColor="rgba(45,212,191,0.6)">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M12 2L2 22h20z" /></svg>
         </FloatingParticle>
-        <FloatingParticle className="left-[12%] top-[23%] animate-float-slow w-5 h-5" colorClass="text-brand-purple" glowColor="rgba(181,95,230,0.7)">
+        <FloatingParticle className="left-[10%] top-[15%] animate-float-slow w-5 h-5" colorClass="text-brand-purple" glowColor="rgba(181,95,230,0.7)">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2"><path d="M12 3c0 4.5 3.5 8 8 8m-8-8c0 4.5-3.5 8-8 8m8 8c0-4.5 3.5-8 8-8m-8 8c0-4.5-3.5-8-8-8" /></svg>
         </FloatingParticle>
-
-        {/* About area (25% - 45% height) */}
-        <FloatingParticle className="right-[12%] top-[29%] animate-float-slow w-6 h-6" colorClass="text-teal-400" glowColor="rgba(45,212,191,0.8)">
+        <FloatingParticle className="right-[25%] top-[17%] animate-float-medium w-6 h-6" colorClass="text-teal-400" glowColor="rgba(45,212,191,0.8)">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M12 3v18M3 12h18" /></svg>
         </FloatingParticle>
-        <FloatingParticle className="left-[6%] top-[34%] animate-float-medium w-7 h-7" colorClass="text-brand-lavender" glowColor="rgba(216,180,254,0.8)">
+
+        {/* About area (15% - 35% height) */}
+        <FloatingParticle className="left-[22%] top-[20%] animate-float-slow w-7 h-7" colorClass="text-brand-lavender" glowColor="rgba(216,180,254,0.8)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M12 2L2 22h20z" /></svg>
+        </FloatingParticle>
+        <FloatingParticle className="right-[10%] top-[23%] animate-float-medium w-5 h-5" colorClass="text-teal-300" glowColor="rgba(45,212,191,0.7)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="8" strokeDasharray="3 3" /></svg>
+        </FloatingParticle>
+        <FloatingParticle className="left-[5%] top-[26%] animate-float-slow w-6 h-6" colorClass="text-teal-400" glowColor="rgba(45,212,191,0.8)">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2"><path d="M12 3c0 4.5 3.5 8 8 8m-8-8c0 4.5-3.5 8-8 8m8 8c0-4.5 3.5-8 8-8m-8 8c0-4.5-3.5-8-8-8" /></svg>
         </FloatingParticle>
-        <FloatingParticle className="right-[25%] top-[38%] animate-float-slow w-5 h-5" colorClass="text-brand-purple" glowColor="rgba(181,95,230,0.6)">
+        <FloatingParticle className="right-[30%] top-[29%] animate-float-slow w-5 h-5" colorClass="text-brand-purple" glowColor="rgba(181,95,230,0.6)">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="4" y="4" width="16" height="16" strokeDasharray="4 2" /></svg>
         </FloatingParticle>
-        <FloatingParticle className="left-[20%] top-[42%] animate-float-medium w-5 h-5" colorClass="text-teal-300" glowColor="rgba(45,212,191,0.7)">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="8" strokeDasharray="3 3" /></svg>
-        </FloatingParticle>
-
-        {/* Skills area (45% - 60% height) */}
-        <FloatingParticle className="left-[15%] top-[47%] animate-float-slow w-8 h-8" colorClass="text-brand-purple" glowColor="rgba(181,95,230,0.8)">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2"><path d="M12 3c0 4.5 3.5 8 8 8m-8-8c0 4.5-3.5 8-8 8m8 8c0-4.5 3.5-8 8-8m-8 8c0-4.5-3.5-8-8-8" /></svg>
-        </FloatingParticle>
-        <FloatingParticle className="right-[6%] top-[51%] animate-float-medium w-6 h-6" colorClass="text-teal-400" glowColor="rgba(45,212,191,0.8)">
+        <FloatingParticle className="left-[12%] top-[31%] animate-float-medium w-6 h-6" colorClass="text-brand-lavender" glowColor="rgba(216,180,254,0.8)">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M12 3v18M3 12h18" /></svg>
         </FloatingParticle>
-        <FloatingParticle className="left-[28%] top-[55%] animate-float-slow w-5 h-5" colorClass="text-brand-lavender" glowColor="rgba(216,180,254,0.7)">
+        <FloatingParticle className="right-[8%] top-[34%] animate-float-slow w-5 h-5" colorClass="text-teal-400" glowColor="rgba(45,212,191,0.7)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="8" strokeDasharray="3 3" /></svg>
+        </FloatingParticle>
+        <FloatingParticle className="left-[26%] top-[37%] animate-float-slow w-6 h-6" colorClass="text-brand-purple" glowColor="rgba(181,95,230,0.8)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2"><path d="M12 3c0 4.5 3.5 8 8 8m-8-8c0 4.5-3.5 8-8 8m8 8c0-4.5 3.5-8 8-8m-8 8c0-4.5-3.5-8-8-8" /></svg>
+        </FloatingParticle>
+        <FloatingParticle className="right-[20%] top-[40%] animate-float-slow w-7 h-7" colorClass="text-brand-lavender" glowColor="rgba(216,180,254,0.7)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M12 2L2 22h20z" /></svg>
+        </FloatingParticle>
+
+        {/* Skills area (35% - 50% height) */}
+        <FloatingParticle className="left-[6%] top-[43%] animate-float-slow w-5 h-5" colorClass="text-brand-purple" glowColor="rgba(181,95,230,0.6)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="4" y="4" width="16" height="16" strokeDasharray="4 2" /></svg>
+        </FloatingParticle>
+        <FloatingParticle className="right-[28%] top-[45%] animate-float-medium w-6 h-6" colorClass="text-teal-400" glowColor="rgba(45,212,191,0.8)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M12 3v18M3 12h18" /></svg>
+        </FloatingParticle>
+        <FloatingParticle className="left-[15%] top-[48%] animate-float-slow w-8 h-8" colorClass="text-brand-purple" glowColor="rgba(181,95,230,0.8)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2"><path d="M12 3c0 4.5 3.5 8 8 8m-8-8c0 4.5-3.5 8-8 8m8 8c0-4.5 3.5-8 8-8m-8 8c0-4.5-3.5-8-8-8" /></svg>
+        </FloatingParticle>
+        <FloatingParticle className="right-[12%] top-[51%] animate-float-slow w-5 h-5" colorClass="text-brand-lavender" glowColor="rgba(216,180,254,0.7)">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="8" strokeDasharray="2 4" /></svg>
         </FloatingParticle>
-        <FloatingParticle className="right-[22%] top-[58%] animate-float-slow w-6 h-6" colorClass="text-brand-purple" glowColor="rgba(181,95,230,0.6)">
+        <FloatingParticle className="left-[24%] top-[54%] animate-float-slow w-6 h-6" colorClass="text-brand-purple" glowColor="rgba(181,95,230,0.6)">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M12 2L2 22h20z" /></svg>
+        </FloatingParticle>
+        <FloatingParticle className="right-[5%] top-[57%] animate-float-medium w-6 h-6" colorClass="text-teal-400" glowColor="rgba(45,212,191,0.8)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M12 3v18M3 12h18" /></svg>
         </FloatingParticle>
 
-        {/* Projects area (60% - 75% height) */}
-        <FloatingParticle className="right-[15%] top-[63%] animate-float-slow w-7 h-7" colorClass="text-brand-purple" glowColor="rgba(181,95,230,0.8)">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M12 2L2 22h20z" /></svg>
-        </FloatingParticle>
-        <FloatingParticle className="left-[10%] top-[67%] animate-float-medium w-8 h-8" colorClass="text-teal-300" glowColor="rgba(45,212,191,0.8)">
+        {/* Projects area (50% - 70% height) */}
+        <FloatingParticle className="left-[9%] top-[60%] animate-float-slow w-8 h-8" colorClass="text-teal-300" glowColor="rgba(45,212,191,0.8)">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1"><path d="M12 3c0 4.5 3.5 8 8 8m-8-8c0 4.5-3.5 8-8 8m8 8c0-4.5 3.5-8 8-8m-8 8c0-4.5-3.5-8-8-8" /></svg>
         </FloatingParticle>
-        <FloatingParticle className="right-[28%] top-[70%] animate-float-slow w-5 h-5" colorClass="text-brand-lavender" glowColor="rgba(216,180,254,0.7)">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M12 3v18M3 12h18" /></svg>
+        <FloatingParticle className="right-[18%] top-[63%] animate-float-slow w-5 h-5" colorClass="text-brand-lavender" glowColor="rgba(216,180,254,0.7)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="4" y="4" width="16" height="16" strokeDasharray="4 2" /></svg>
         </FloatingParticle>
-        <FloatingParticle className="left-[24%] top-[73%] animate-float-medium w-5 h-5" colorClass="text-teal-400" glowColor="rgba(45,212,191,0.7)">
+        <FloatingParticle className="left-[28%] top-[66%] animate-float-slow w-5 h-5" colorClass="text-teal-400" glowColor="rgba(45,212,191,0.7)">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="8" strokeDasharray="3 3" /></svg>
         </FloatingParticle>
+        <FloatingParticle className="right-[22%] top-[69%] animate-float-slow w-7 h-7" colorClass="text-brand-purple" glowColor="rgba(181,95,230,0.8)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M12 2L2 22h20z" /></svg>
+        </FloatingParticle>
+        <FloatingParticle className="left-[14%] top-[72%] animate-float-slow w-6 h-6" colorClass="text-brand-lavender" glowColor="rgba(216,180,254,0.7)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M12 3v18M3 12h18" /></svg>
+        </FloatingParticle>
 
-        {/* Education area (75% - 88% height) */}
-        <FloatingParticle className="right-[14%] top-[76%] animate-float-slow w-6 h-6" colorClass="text-brand-lavender" glowColor="rgba(216,180,254,0.8)">
+        {/* Education area (70% - 85% height) */}
+        <FloatingParticle className="right-[8%] top-[74%] animate-float-slow w-6 h-6" colorClass="text-brand-purple" glowColor="rgba(181,95,230,0.8)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2"><path d="M12 3c0 4.5 3.5 8 8 8m-8-8c0 4.5-3.5 8-8 8m8 8c0-4.5 3.5-8 8-8m-8 8c0-4.5-3.5-8-8-8" /></svg>
+        </FloatingParticle>
+        <FloatingParticle className="left-[5%] top-[77%] animate-float-slow w-5 h-5" colorClass="text-teal-400" glowColor="rgba(45,212,191,0.7)">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="8" strokeDasharray="4 4" /></svg>
         </FloatingParticle>
-        <FloatingParticle className="left-[8%] top-[80%] animate-float-medium w-6 h-6" colorClass="text-brand-purple" glowColor="rgba(181,95,230,0.8)">
+        <FloatingParticle className="right-[26%] top-[79%] animate-float-slow w-5 h-5" colorClass="text-brand-purple" glowColor="rgba(181,95,230,0.6)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="4" y="4" width="16" height="16" strokeDasharray="4 2" /></svg>
+        </FloatingParticle>
+        <FloatingParticle className="left-[22%] top-[82%] animate-float-slow w-6 h-6" colorClass="text-brand-lavender" glowColor="rgba(216,180,254,0.7)">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M12 2L2 22h20z" /></svg>
         </FloatingParticle>
-        <FloatingParticle className="right-[26%] top-[83%] animate-float-slow w-5 h-5" colorClass="text-teal-400" glowColor="rgba(45,212,191,0.7)">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M12 3v18M3 12h18" /></svg>
-        </FloatingParticle>
-        <FloatingParticle className="left-[26%] top-[86%] animate-float-slow w-6 h-6" colorClass="text-brand-lavender" glowColor="rgba(216,180,254,0.7)">
+        <FloatingParticle className="right-[10%] top-[84%] animate-float-slow w-6 h-6" colorClass="text-brand-purple" glowColor="rgba(181,95,230,0.8)">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2"><path d="M12 3c0 4.5 3.5 8 8 8m-8-8c0 4.5-3.5 8-8 8m8 8c0-4.5 3.5-8 8-8m-8 8c0-4.5-3.5-8-8-8" /></svg>
         </FloatingParticle>
 
-        {/* Contact/Footer area (88% - 97% height) */}
-        <FloatingParticle className="left-[12%] top-[89%] animate-float-slow w-8 h-8" colorClass="text-teal-400" glowColor="rgba(45,212,191,0.8)">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2"><path d="M12 3c0 4.5 3.5 8 8 8m-8-8c0 4.5-3.5 8-8 8m8 8c0-4.5 3.5-8 8-8m-8 8c0-4.5-3.5-8-8-8" /></svg>
-        </FloatingParticle>
-        <FloatingParticle className="right-[10%] top-[92%] animate-float-medium w-6 h-6" colorClass="text-brand-purple" glowColor="rgba(181,95,230,0.8)">
+        {/* Contact/Footer area (85% - 98% height) */}
+        <FloatingParticle className="left-[8%] top-[86%] animate-float-slow w-6 h-6" colorClass="text-teal-400" glowColor="rgba(45,212,191,0.8)">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M12 3v18M3 12h18" /></svg>
         </FloatingParticle>
-        <FloatingParticle className="left-[20%] top-[94%] animate-float-slow w-5 h-5" colorClass="text-brand-lavender" glowColor="rgba(216,180,254,0.7)">
+        <FloatingParticle className="right-[15%] top-[88%] animate-float-slow w-5 h-5" colorClass="text-brand-lavender" glowColor="rgba(216,180,254,0.7)">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="8" strokeDasharray="3 3" /></svg>
         </FloatingParticle>
-        <FloatingParticle className="right-[18%] top-[96%] animate-float-slow w-6 h-6" colorClass="text-teal-300" glowColor="rgba(45,212,191,0.6)">
+        <FloatingParticle className="left-[12%] top-[90%] animate-float-slow w-8 h-8" colorClass="text-teal-400" glowColor="rgba(45,212,191,0.8)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2"><path d="M12 3c0 4.5 3.5 8 8 8m-8-8c0 4.5-3.5 8-8 8m8 8c0-4.5 3.5-8 8-8m-8 8c0-4.5-3.5-8-8-8" /></svg>
+        </FloatingParticle>
+        <FloatingParticle className="right-[6%] top-[92%] animate-float-slow w-6 h-6" colorClass="text-teal-300" glowColor="rgba(45,212,191,0.6)">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M12 2L2 22h20z" /></svg>
+        </FloatingParticle>
+        <FloatingParticle className="left-[26%] top-[94%] animate-float-slow w-5 h-5" colorClass="text-brand-purple" glowColor="rgba(181,95,230,0.8)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M12 3v18M3 12h18" /></svg>
+        </FloatingParticle>
+        <FloatingParticle className="right-[20%] top-[96%] animate-float-slow w-6 h-6" colorClass="text-brand-lavender" glowColor="rgba(216,180,254,0.7)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="8" strokeDasharray="3 3" /></svg>
+        </FloatingParticle>
+        <FloatingParticle className="left-[4%] top-[97%] animate-float-slow w-5 h-5" colorClass="text-brand-purple" glowColor="rgba(181,95,230,0.6)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="4" y="4" width="16" height="16" strokeDasharray="4 2" /></svg>
+        </FloatingParticle>
+        <FloatingParticle className="right-[12%] top-[98%] animate-float-slow w-6 h-6" colorClass="text-brand-purple" glowColor="rgba(181,95,230,0.8)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2"><path d="M12 3c0 4.5 3.5 8 8 8m-8-8c0 4.5-3.5 8-8 8m8 8c0-4.5 3.5-8 8-8m-8 8c0-4.5-3.5-8-8-8" /></svg>
         </FloatingParticle>
       </div>
 
