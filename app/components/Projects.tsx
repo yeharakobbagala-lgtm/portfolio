@@ -19,8 +19,9 @@ const projectsData = [
       "Digital animal health cards & vaccination records tracking"
     ],
     challenges: "Solved real-time map clustering latencies in React Native by optimizing spatial MongoDB database indexes. Configured secure, fine-grained CORS rules and JWT-based authentication for administrative dashboard users.",
-    github: "https://github.com/yeharakobbagala-lgtm/safe-paws-backend",
-    demo: "",
+    github: "https://github.com/Sunx91/safe-paws-frontend",
+    backendRepo: "https://github.com/Sunx91/safe-paws-backend",
+    demo: "https://safepaws.site/",
     mockup: "/mockups/safepaws_orange.png",
     status: "Completed"
   },
@@ -276,6 +277,18 @@ export default function Projects() {
                         Private Repository
                       </div>
                     )}
+
+                    {/* @ts-ignore */}
+                    {project.backendRepo ? (
+                      <a
+                        href={project.backendRepo}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex-grow flex items-center justify-center gap-2 py-2.5 bg-white/5 hover:bg-white/10 text-white rounded-lg border border-white/5 hover:border-brand-purple/30 text-sm font-semibold transition-all duration-300"
+                      >
+                        Backend Repo
+                      </a>
+                    ) : null}
                     
                     {project.demo ? (
                       <a

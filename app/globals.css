@@ -14,8 +14,8 @@
   --color-brand-lavender: #d8b4fe;
   --color-brand-plum: #4c1d95;
   
-  --font-sans: var(--font-geist-sans), Inter, sans-serif;
-  --font-mono: var(--font-geist-mono), monospace;
+  --font-sans: var(--font-roboto-sans), Inter, sans-serif;
+  --font-mono: var(--font-roboto-mono), monospace;
 }
 
 :root {
