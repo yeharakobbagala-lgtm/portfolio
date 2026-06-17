@@ -30,6 +30,19 @@ const educationTimeline = [
       "Web Development (HTML, CSS, JavaScript basics)"
     ],
     status: "Completed - Distinction Standing"
+  },
+  {
+    year: "Secondary School",
+    title: "GCE Advanced Level — Science Stream",
+    institution: "Visakha Vidyalaya",
+    description: "Completed GCE Advanced Level examination in the Science stream, building a strong foundation in analytical thinking and scientific principles.",
+    highlights: [
+      "Mathematics & Combined Mathematics",
+      "Physics & Chemistry",
+      "Science Stream — Analytical & Logical Reasoning",
+      "ICT & Technology Fundamentals"
+    ],
+    status: "Completed"
   }
 ];
 
