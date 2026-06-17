@@ -168,6 +168,26 @@ body {
   }
 }
 
+@keyframes path-draw {
+  0% {
+    stroke-dashoffset: 1000;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes pulse-stroke {
+  0%, 100% {
+    stroke-width: 2;
+    opacity: 0.6;
+  }
+  50% {
+    stroke-width: 3.5;
+    opacity: 1;
+  }
+}
+
 .animate-orbit-slow {
   animation: orbit-slow 25s linear infinite;
 }
@@ -186,6 +206,11 @@ body {
 
 .animate-glow-pulse {
   animation: glow-pulse 4s ease-in-out infinite;
+}
+
+.animate-path-draw {
+  stroke-dasharray: 1000;
+  animation: path-draw 8s linear infinite, pulse-stroke 4s ease-in-out infinite;
 }
 
 /* Scroll-triggered reveal states */

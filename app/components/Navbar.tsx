@@ -81,21 +81,23 @@ export default function Navbar() {
           : "py-6 bg-transparent"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
+      <div className="max-w-7xl mx-auto px-6 flex justify-between items-center relative">
         {/* Logo */}
         <a
           href="#home"
           onClick={(e) => scrollToSection(e, "#home")}
-          className="flex items-center gap-2 font-mono text-xl font-bold tracking-tight text-white group"
+          className="flex items-center gap-2.5 font-bold tracking-tight text-white group"
         >
-          <Code2 className="w-6 h-6 text-brand-purple group-hover:rotate-12 transition-transform duration-300" />
-          <span>
-            yehara<span className="text-brand-purple">.online</span>
+          <div className="w-9 h-9 rounded-full bg-gradient-to-tr from-brand-violet to-brand-purple flex items-center justify-center text-white text-base font-extrabold shadow-md shadow-brand-violet/20 group-hover:scale-105 transition-transform duration-300">
+            Y
+          </div>
+          <span className="text-lg tracking-wide font-sans">
+            yehara<span className="text-brand-purple font-semibold">.online</span>
           </span>
         </a>
 
-        {/* Desktop Nav Links */}
-        <div className="hidden md:flex items-center gap-1 bg-white/5 p-1 rounded-full border border-white/5 backdrop-blur-sm">
+        {/* Desktop Nav Links (Centred) */}
+        <div className="hidden md:flex items-center gap-1 bg-white/5 p-1 rounded-full border border-white/5 backdrop-blur-sm md:absolute md:left-1/2 md:-translate-x-1/2">
           {navLinks.map((link) => {
             const isActive = activeSection === link.href.replace("#", "");
             return (
@@ -115,16 +117,8 @@ export default function Navbar() {
           })}
         </div>
 
-        {/* Action Button */}
-        <div className="hidden md:block">
-          <a
-            href="#contact"
-            onClick={(e) => scrollToSection(e, "#contact")}
-            className="px-6 py-2.5 rounded-full text-sm font-medium text-white border border-white/10 hover:border-brand-purple/50 hover:shadow-[0_0_15px_rgba(181,95,230,0.3)] transition-all duration-300 bg-white/5"
-          >
-            Hire Me
-          </a>
-        </div>
+        {/* Right spacing to balance centering (no button) */}
+        <div className="hidden md:block w-32" />
 
         {/* Mobile Menu Button */}
         <button
