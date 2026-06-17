@@ -6,30 +6,19 @@ import ScrollReveal from "./ScrollReveal";
 
 const educationTimeline = [
   {
-    year: "Year 2 (Current)",
-    title: "BSc (Hons) Computer Science - Year 2",
+    year: "2024 — Present",
+    title: "BSc (Hons) Computer Science",
     institution: "IIT Sri Lanka / University of Westminster",
-    description: "Focusing on enterprise application design, database architectures, algorithmic efficiency, and distributed systems.",
+    description: "Studying enterprise application design, database architectures, algorithmic efficiency, and distributed systems. Built strong foundations in mathematics, algorithmic problem solving, and object-oriented concepts.",
     highlights: [
       "Enterprise Application Development (Java / Spring Boot)",
       "Database Systems & Design Optimization (SQL & MongoDB)",
       "Object-Oriented Programming & Patterns",
-      "Agile Project Delivery & SCRUM Collaborations"
+      "Agile Project Delivery & SCRUM Collaborations",
+      "Programming Principles (Java & Python)",
+      "Computer Systems & Architecture Essentials"
     ],
     status: "In Progress"
-  },
-  {
-    year: "Year 1 (Completed)",
-    title: "BSc (Hons) Computer Science - Year 1",
-    institution: "IIT Sri Lanka / University of Westminster",
-    description: "Built strong foundations in mathematics, algorithmic problem solving, object-oriented concepts, and basic networking principles.",
-    highlights: [
-      "Programming Principles (Java & Python)",
-      "Software Design & Development Paradigms",
-      "Computer Systems & Architecture Essentials",
-      "Web Development (HTML, CSS, JavaScript basics)"
-    ],
-    status: "Completed - Distinction Standing"
   },
   {
     year: "Secondary School",
