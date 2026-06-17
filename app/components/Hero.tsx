@@ -73,6 +73,50 @@ export default function Hero() {
         {/* Profile and SVG Graphics Centerpiece */}
         <ScrollReveal direction="fade" delay={200} className="relative z-10 flex items-center justify-center select-none">
           
+          {/* Concentric rotating background rings (HUD Style) */}
+          <svg
+            className="absolute w-[360px] h-[360px] sm:w-[500px] sm:h-[500px] pointer-events-none z-0 text-white/5"
+            viewBox="0 0 400 400"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            {/* Outer dashed ring - rotates clockwise */}
+            <circle
+              cx="200"
+              cy="200"
+              r="175"
+              className="animate-orbit-slow"
+              stroke="currentColor"
+              strokeWidth="1"
+              strokeDasharray="8 12"
+              opacity="0.4"
+            />
+            {/* Inner dotted ring - rotates counter-clockwise */}
+            <circle
+              cx="200"
+              cy="200"
+              r="150"
+              className="animate-orbit-reverse"
+              stroke="url(#hudPurpleGradient)"
+              strokeWidth="1.2"
+              strokeDasharray="2 6"
+              opacity="0.7"
+            />
+            {/* Tiny glowing orbit dot */}
+            <circle
+              cx="350"
+              cy="200"
+              r="3"
+              className="animate-orbit-slow origin-[200px_200px] fill-teal-400 shadow-[0_0_8px_rgba(45,212,191,0.5)]"
+            />
+            <defs>
+              <linearGradient id="hudPurpleGradient" x1="0" y1="0" x2="400" y2="400" gradientUnits="userSpaceOnUse">
+                <stop stopColor="#7c3aed" stopOpacity="0.4" />
+                <stop offset="1" stopColor="#b55fe6" stopOpacity="0.15" />
+              </linearGradient>
+            </defs>
+          </svg>
+
           {/* Looping decorative vector path */}
           <svg
             className="absolute w-[340px] h-[340px] sm:w-[480px] sm:h-[480px] pointer-events-none z-20 text-teal-400"
