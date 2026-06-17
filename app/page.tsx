@@ -48,40 +48,66 @@ export default function Home() {
 
         {/* Ambient floating items spread vertically */}
         {/* Top area */}
-        <div className="absolute left-[5%] top-[12%] text-teal-400/20 animate-float-slow w-6 h-6">
+        <div className="absolute left-[5%] top-[8%] text-teal-400/30 animate-float-slow w-6 h-6">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M12 3v18M3 12h18" /></svg>
         </div>
-        <div className="absolute right-[8%] top-[18%] text-brand-purple/20 animate-float-medium w-8 h-8">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1"><path d="M12 3c0 4.5 3.5 8 8 8m-8-8c0 4.5-3.5 8-8 8m8 8c0-4.5 3.5-8 8-8m-8 8c0-4.5-3.5-8-8-8" /></svg>
+        <div className="absolute right-[8%] top-[12%] text-brand-purple/30 animate-float-medium w-8 h-8">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2"><path d="M12 3c0 4.5 3.5 8 8 8m-8-8c0 4.5-3.5 8-8 8m8 8c0-4.5 3.5-8 8-8m-8 8c0-4.5-3.5-8-8-8" /></svg>
+        </div>
+        <div className="absolute left-[20%] top-[16%] text-brand-lavender/25 animate-float-medium w-5 h-5">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="8" strokeDasharray="3 3" /></svg>
+        </div>
+        <div className="absolute right-[22%] top-[24%] text-teal-300/30 animate-float-slow w-7 h-7">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M12 2L2 22h20z" /></svg>
         </div>
 
         {/* About area */}
-        <div className="absolute right-[12%] top-[32%] text-teal-300/15 animate-float-slow w-5 h-5">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="8" strokeDasharray="3 3" /></svg>
+        <div className="absolute right-[12%] top-[32%] text-teal-400/30 animate-float-slow w-6 h-6">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M12 3v18M3 12h18" /></svg>
         </div>
-        <div className="absolute left-[6%] top-[38%] text-brand-lavender/20 animate-float-medium w-7 h-7">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M12 2L2 22h20z" /></svg>
+        <div className="absolute left-[6%] top-[38%] text-brand-lavender/35 animate-float-medium w-7 h-7">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2"><path d="M12 3c0 4.5 3.5 8 8 8m-8-8c0 4.5-3.5 8-8 8m8 8c0-4.5 3.5-8 8-8m-8 8c0-4.5-3.5-8-8-8" /></svg>
+        </div>
+        <div className="absolute right-[25%] top-[42%] text-brand-purple/25 animate-float-slow w-5 h-5">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="4" y="4" width="16" height="16" strokeDasharray="4 2" /></svg>
         </div>
 
-        {/* Skills & Projects area */}
-        <div className="absolute left-[15%] top-[48%] text-brand-purple/20 animate-float-slow w-8 h-8">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1"><path d="M12 3c0 4.5 3.5 8 8 8m-8-8c0 4.5-3.5 8-8 8m8 8c0-4.5 3.5-8 8-8m-8 8c0-4.5-3.5-8-8-8" /></svg>
+        {/* Skills area */}
+        <div className="absolute left-[15%] top-[48%] text-brand-purple/35 animate-float-slow w-8 h-8">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2"><path d="M12 3c0 4.5 3.5 8 8 8m-8-8c0 4.5-3.5 8-8 8m8 8c0-4.5 3.5-8 8-8m-8 8c0-4.5-3.5-8-8-8" /></svg>
         </div>
-        <div className="absolute right-[6%] top-[56%] text-teal-400/20 animate-float-medium w-6 h-6">
+        <div className="absolute right-[6%] top-[54%] text-teal-400/30 animate-float-medium w-6 h-6">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M12 3v18M3 12h18" /></svg>
+        </div>
+        <div className="absolute left-[28%] top-[58%] text-brand-lavender/25 animate-float-slow w-5 h-5">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="8" strokeDasharray="2 4" /></svg>
+        </div>
+
+        {/* Projects area */}
+        <div className="absolute right-[15%] top-[64%] text-brand-purple/30 animate-float-slow w-7 h-7">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M12 2L2 22h20z" /></svg>
+        </div>
+        <div className="absolute left-[10%] top-[68%] text-teal-300/35 animate-float-medium w-8 h-8">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1"><path d="M12 3c0 4.5 3.5 8 8 8m-8-8c0 4.5-3.5 8-8 8m8 8c0-4.5 3.5-8 8-8m-8 8c0-4.5-3.5-8-8-8" /></svg>
         </div>
 
         {/* Education area */}
-        <div className="absolute right-[14%] top-[72%] text-brand-lavender/15 animate-float-slow w-6 h-6">
+        <div className="absolute right-[14%] top-[74%] text-brand-lavender/25 animate-float-slow w-6 h-6">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="8" strokeDasharray="4 4" /></svg>
         </div>
-        <div className="absolute left-[8%] top-[78%] text-brand-purple/25 animate-float-medium w-6 h-6">
+        <div className="absolute left-[8%] top-[79%] text-brand-purple/35 animate-float-medium w-6 h-6">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M12 2L2 22h20z" /></svg>
         </div>
+        <div className="absolute right-[26%] top-[82%] text-teal-400/30 animate-float-slow w-5 h-5">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M12 3v18M3 12h18" /></svg>
+        </div>
 
-        {/* Footer area */}
-        <div className="absolute left-[12%] top-[90%] text-teal-400/15 animate-float-slow w-8 h-8">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1"><path d="M12 3c0 4.5 3.5 8 8 8m-8-8c0 4.5-3.5 8-8 8m8 8c0-4.5 3.5-8 8-8m-8 8c0-4.5-3.5-8-8-8" /></svg>
+        {/* Contact/Footer area */}
+        <div className="absolute left-[12%] top-[88%] text-teal-400/30 animate-float-slow w-8 h-8">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2"><path d="M12 3c0 4.5 3.5 8 8 8m-8-8c0 4.5-3.5 8-8 8m8 8c0-4.5 3.5-8 8-8m-8 8c0-4.5-3.5-8-8-8" /></svg>
+        </div>
+        <div className="absolute right-[10%] top-[93%] text-brand-purple/30 animate-float-medium w-6 h-6">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M12 3v18M3 12h18" /></svg>
         </div>
       </div>
 
