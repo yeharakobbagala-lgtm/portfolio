@@ -6,14 +6,66 @@ import { Mail } from "lucide-react";
 import ScrollReveal from "./ScrollReveal";
 
 export default function Hero() {
+  const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    const targetId = href.replace("#", "");
+    const element = document.getElementById(targetId);
+    if (element) {
+      const offset = 80;
+      const bodyRect = document.body.getBoundingClientRect().top;
+      const elementRect = element.getBoundingClientRect().top;
+      const elementPosition = elementRect - bodyRect;
+      const offsetPosition = elementPosition - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      });
+    }
+
+    // Dispatch events to control the Developer Passport flip state if needed
+    if (href === "#contact") {
+      setTimeout(() => {
+        window.dispatchEvent(new CustomEvent("trigger-contact-flip"));
+      }, 100);
+    } else if (href === "#about") {
+      window.dispatchEvent(new CustomEvent("trigger-about-reset"));
+    }
+  };
+
   return (
     <section
       id="home"
-      className="relative min-h-[90vh] flex flex-col items-center justify-center pt-24 pb-12 overflow-hidden"
+      className="relative min-h-[95vh] flex flex-col items-center justify-center pt-24 pb-20 overflow-hidden"
     >
       {/* Background soft light gradient blobs */}
       <div className="absolute top-[15%] left-[5%] w-[380px] h-[380px] rounded-full bg-brand-violet/10 blur-[130px] animate-glow-pulse pointer-events-none" />
       <div className="absolute bottom-[10%] right-[5%] w-[450px] h-[450px] rounded-full bg-brand-purple/10 blur-[150px] animate-glow-pulse pointer-events-none" />
+
+      {/* Floating Abstract Decorative Graphics */}
+      <div className="absolute left-[8%] top-[30%] text-brand-purple/20 animate-float-slow w-8 h-8 pointer-events-none hidden md:block">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-full h-full">
+          <path d="M12 3v18M3 12h18M12 3c0 4.5 3.5 8 8 8m-8-8c0 4.5-3.5 8-8 8m8 8c0-4.5 3.5-8 8-8m-8 8c0-4.5-3.5-8-8-8" />
+        </svg>
+      </div>
+      
+      <div className="absolute right-[10%] top-[20%] text-teal-400/25 animate-float-medium w-6 h-6 pointer-events-none hidden md:block">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-full h-full">
+          <path d="M12 4v16M4 12h16" strokeLinecap="round" />
+        </svg>
+      </div>
+
+      <div className="absolute left-[15%] bottom-[25%] text-teal-300/15 animate-float-medium w-5 h-5 pointer-events-none hidden md:block">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-full h-full">
+          <circle cx="12" cy="12" r="8" strokeDasharray="4 4" />
+        </svg>
+      </div>
+
+      <div className="absolute right-[12%] bottom-[30%] text-brand-lavender/20 animate-float-slow w-10 h-10 pointer-events-none hidden md:block">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" className="w-full h-full">
+          <path d="M12 2L2 22h20L12 2z" strokeLinejoin="round" />
+        </svg>
+      </div>
 
       {/* Main Container */}
       <div className="max-w-7xl mx-auto px-6 w-full flex flex-col items-center justify-center relative z-10">
@@ -89,11 +141,41 @@ export default function Hero() {
           <p className="text-brand-lavender font-mono text-xs sm:text-sm tracking-[0.22em] uppercase mt-4">
             Full-Stack Developer <span className="text-teal-400 font-sans">•</span> CS Undergraduate <span className="text-teal-400 font-sans">•</span> AI Builder
           </p>
+
+          {/* Action Buttons */}
+          <div className="flex flex-wrap items-center justify-center gap-4 mt-8 z-30">
+            <a
+              href="#projects"
+              onClick={(e) => scrollToSection(e, "#projects")}
+              className="group inline-flex items-center gap-2 px-8 py-3.5 bg-gradient-to-r from-brand-violet to-brand-purple hover:from-brand-purple hover:to-brand-violet text-white font-semibold rounded-2xl shadow-lg shadow-brand-violet/20 hover:shadow-brand-purple/30 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300"
+            >
+              View My Work
+              <svg
+                className="w-4 h-4 group-hover:translate-x-1 transition-transform"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </a>
+
+            <a
+              href="#contact"
+              onClick={(e) => scrollToSection(e, "#contact")}
+              className="px-8 py-3.5 bg-[#120a24]/60 hover:bg-[#1c1236]/80 text-white border border-white/10 hover:border-brand-purple/30 font-semibold rounded-2xl hover:scale-[1.02] active:scale-[0.98] transition-all duration-300"
+            >
+              Let&apos;s Connect
+            </a>
+          </div>
         </ScrollReveal>
       </div>
 
       {/* Vertical Social Icons on the left (Desktop) / Inline center (Mobile) */}
-      <div className="md:absolute md:left-8 md:top-1/2 md:-translate-y-1/2 flex md:flex-col items-center gap-5 mt-8 md:mt-0 z-30">
+      <div className="md:absolute md:left-8 md:top-1/2 md:-translate-y-1/2 flex md:flex-col items-center gap-5 mt-10 md:mt-0 z-30">
         <a
           href="https://github.com/yeharakobbagala-lgtm"
           target="_blank"
@@ -126,6 +208,14 @@ export default function Hero() {
         >
           <Mail className="w-4.5 h-4.5" />
         </a>
+      </div>
+
+      {/* Centred Scroll Down Mouse Indicator */}
+      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 text-gray-500 hover:text-white transition-colors duration-300 pointer-events-none select-none z-30">
+        <span className="text-[9px] uppercase tracking-[0.25em] font-mono opacity-50">Scroll Down</span>
+        <div className="w-4.5 h-7 rounded-full border border-white/20 flex justify-center p-1">
+          <div className="w-1 h-1 rounded-full bg-teal-400 animate-bounce" />
+        </div>
       </div>
 
       {/* Bottom fade visual separation */}
