@@ -27,9 +27,7 @@ const educationTimeline = [
     description: "Completed GCE Advanced Level examination in the Science stream, building a strong foundation in analytical thinking and scientific principles.",
     highlights: [
       "Mathematics & Combined Mathematics",
-      "Physics & Chemistry",
-      "Science Stream — Analytical & Logical Reasoning",
-      "ICT & Technology Fundamentals"
+      "Physics & Chemistry"
     ],
     status: "Completed"
   }
