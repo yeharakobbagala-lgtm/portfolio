@@ -26,21 +26,21 @@ export default function Hero() {
   return (
     <section id="home" className="relative min-h-screen flex items-center pt-28 pb-20 sm:pb-24 overflow-hidden">
       <div className="container-site relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 sm:gap-16 lg:gap-24 xl:gap-28 items-center">
           <ScrollReveal
             direction="left"
             delay={100}
-            className="order-1 lg:order-2 text-center lg:text-left"
+            className="order-1 lg:order-2 text-center lg:text-left mb-4 sm:mb-6 lg:mb-0"
           >
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-mono uppercase tracking-widest text-emerald-300 bg-emerald-500/10 border border-emerald-500/25 mb-5">
               <Sparkles className="w-3.5 h-3.5" aria-hidden="true" />
               {identity.availability}
             </div>
 
-            <p className="text-brand-lavender font-mono text-xs sm:text-sm tracking-[0.2em] uppercase mb-3">
+            <p className="text-brand-lavender font-mono text-xs sm:text-sm tracking-[0.2em] uppercase mb-4 sm:mb-5">
               Hello, I&apos;m
             </p>
-            <h1 className="text-3xl sm:text-5xl md:text-6xl xl:text-7xl font-bold tracking-tight leading-[1.08] text-gradient-primary">
+            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-[5.75rem] 2xl:text-9xl font-bold tracking-tight leading-[1.05] text-gradient-primary">
               {identity.fullName}
             </h1>
 
@@ -96,7 +96,7 @@ export default function Hero() {
           <ScrollReveal
             direction="right"
             delay={200}
-            className="flex justify-center lg:justify-end order-2 lg:order-1"
+            className="flex justify-start pl-2 sm:pl-4 lg:pl-6 xl:pl-8 order-2 lg:order-1"
           >
             <div className="relative">
               <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-brand-violet/25 to-brand-purple/15 blur-3xl scale-110 animate-glow-pulse" />

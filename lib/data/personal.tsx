@@ -328,7 +328,6 @@ export const personal = {
     ],
   },
 
-  backgroundParticles: [] satisfies BackgroundParticle[],
 } as const;
 
 const particleIcons: Record<ParticleIcon, React.ReactNode> = {

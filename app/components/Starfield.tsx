@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useMemo } from "react";
-import { generateStarDots } from "@/lib/data/generate-particles";
+import { generateStarDots, formatDelaySeconds, formatPercent } from "@/lib/data/generate-particles";
 import { getDriftClass } from "@/lib/data/personal";
 
 export default function Starfield() {
@@ -14,12 +14,12 @@ export default function Starfield() {
           key={star.id}
           className={`absolute rounded-full bg-white animate-twinkle ${getDriftClass(star.direction, star.speed)}`}
           style={{
-            left: `${star.left}%`,
-            top: `${star.top}%`,
+            left: formatPercent(star.left),
+            top: formatPercent(star.top),
             width: `${star.size}px`,
             height: `${star.size}px`,
             opacity: star.opacity,
-            animationDelay: `${star.delay}s`,
+            animationDelay: formatDelaySeconds(star.delay),
           }}
         />
       ))}

@@ -15,6 +15,19 @@ function seededValue(index: number, salt: number): number {
   return value - Math.floor(value);
 }
 
+/** Stable string formatting — avoids SSR/client float precision hydration mismatches. */
+export function formatPercent(value: number): string {
+  return `${(Math.round(value * 10_000) / 10_000).toFixed(4)}%`;
+}
+
+export function formatDelaySeconds(value: number): string {
+  return `${(Math.round(value * 100_000) / 100_000).toFixed(5)}s`;
+}
+
+function clampPercent(value: number, min = 3, max = 97): number {
+  return Math.round(Math.min(max, Math.max(min, value)) * 10_000) / 10_000;
+}
+
 function isInExcludedCorner(left: number, top: number): boolean {
   return left < CORNER_EXCLUDE.leftMax && top < CORNER_EXCLUDE.topMax;
 }
@@ -62,12 +75,12 @@ export function generateSiteParticles(total: number): BackgroundParticle[] {
       let left = col * cellW + cellW / 2 + jitterX;
       let top = row * cellH + cellH / 2 + jitterY;
 
-      left = Math.min(97, Math.max(3, left));
-      top = Math.min(97, Math.max(3, top));
+      left = clampPercent(left);
+      top = clampPercent(top);
 
       if (isInExcludedCorner(left, top)) {
-        left = CORNER_EXCLUDE.leftMax + seededValue(index, 10) * 12;
-        top = CORNER_EXCLUDE.topMax + seededValue(index, 11) * 10;
+        left = clampPercent(CORNER_EXCLUDE.leftMax + seededValue(index, 10) * 12);
+        top = clampPercent(CORNER_EXCLUDE.topMax + seededValue(index, 11) * 10);
       }
 
       const icon = pickIcon(index, left, top);
@@ -84,9 +97,9 @@ export function generateSiteParticles(total: number): BackgroundParticle[] {
         floatSpeed,
         twinkle: icon === "star" || icon === "dot",
         style: {
-          left: `${left}%`,
-          top: `${top}%`,
-          animationDelay: `${seededValue(index, 7) * 8}s`,
+          left: formatPercent(left),
+          top: formatPercent(top),
+          animationDelay: formatDelaySeconds(seededValue(index, 7) * 8),
         },
       });
 
@@ -131,13 +144,13 @@ export function generateStarDots(count: number): StarDot[] {
 
       stars.push({
         id,
-        left: Math.min(98, Math.max(2, left)),
-        top: Math.min(98, Math.max(2, top)),
+        left: clampPercent(left, 2, 98),
+        top: clampPercent(top, 2, 98),
         size: seededValue(id, 3) > 0.6 ? 2 : 1.5,
-        opacity: 0.2 + seededValue(id, 4) * 0.45,
+        opacity: Math.round((0.2 + seededValue(id, 4) * 0.45) * 1000) / 1000,
         direction: id % 2 === 0 ? "up" : "down",
         speed: seededValue(id, 5) > 0.5 ? "medium" : "slow",
-        delay: seededValue(id, 6) * 8,
+        delay: Math.round(seededValue(id, 6) * 8 * 100_000) / 100_000,
       });
 
       id += 1;
