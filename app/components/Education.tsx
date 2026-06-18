@@ -3,117 +3,58 @@
 import React from "react";
 import { GraduationCap, Calendar, BookOpen, CheckCircle } from "lucide-react";
 import ScrollReveal from "./ScrollReveal";
-
-const educationTimeline = [
-  {
-    year: "2024 — Present",
-    title: "BSc (Hons) Computer Science",
-    institution: "IIT Sri Lanka / University of Westminster",
-    description: "Studying enterprise application design, database architectures, algorithmic efficiency, and distributed systems. Built strong foundations in mathematics, algorithmic problem solving, and object-oriented concepts.",
-    highlights: [
-      "Enterprise Application Development (Java / Spring Boot)",
-      "Database Systems & Design Optimization (SQL & MongoDB)",
-      "Object-Oriented Programming & Patterns",
-      "Agile Project Delivery & SCRUM Collaborations",
-      "Programming Principles (Java & Python)",
-      "Computer Systems & Architecture Essentials"
-    ],
-    status: "In Progress"
-  },
-  {
-    year: "Secondary School",
-    title: "GCE Advanced Level — Science Stream",
-    institution: "Visakha Vidyalaya",
-    description: "Completed GCE Advanced Level examination in the Science stream, building a strong foundation in analytical thinking and scientific principles.",
-    highlights: [
-      "Mathematics & Combined Mathematics",
-      "Physics & Chemistry"
-    ],
-    status: "Completed"
-  }
-];
+import SectionHeader from "./SectionHeader";
+import { educationTimeline } from "@/lib/data/personal";
 
 export default function Education() {
   return (
-    <section id="education" className="py-24 relative overflow-hidden bg-bg-space/30 dot-bg">
-      {/* Background glow orb */}
-      <div className="absolute top-1/4 right-10 w-[250px] h-[250px] rounded-full bg-brand-violet/5 blur-[90px] pointer-events-none" />
+    <section id="education" className="section-shell section-y relative overflow-hidden dot-bg">
+      <div className="absolute top-1/4 right-10 w-[300px] h-[300px] rounded-full bg-brand-violet/6 blur-[100px] pointer-events-none" />
 
-      <div className="max-w-4xl mx-auto px-6 relative z-10">
-        <ScrollReveal direction="up">
-          <div className="text-center mb-16">
-            <h2 className="text-xs font-semibold uppercase tracking-widest text-brand-purple mb-2">
-              Background
-            </h2>
-            <h3 className="text-3xl sm:text-4xl font-extrabold text-white">
-              Education & Academic Track
-            </h3>
-            <div className="w-12 h-1 bg-gradient-to-r from-brand-violet to-brand-purple mx-auto mt-4 rounded-full" />
-          </div>
-        </ScrollReveal>
+      <div className="container-site max-w-4xl relative z-10">
+        <SectionHeader label="Background" title="Education & Academic Track" />
 
-        {/* Timeline Path */}
-        <div className="relative border-l-2 border-white/5 pl-8 sm:pl-12 space-y-12 ml-4">
+        <div className="relative border-l border-brand-purple/20 pl-6 sm:pl-10 space-y-8 ml-2">
           {educationTimeline.map((item, idx) => (
-            <ScrollReveal
-              key={idx}
-              direction="right"
-              delay={idx * 150}
-              className="relative"
-            >
-              {/* Timeline Indicator Node */}
-              <div className="absolute -left-[45px] sm:-left-[61px] top-1.5 w-8 h-8 rounded-full bg-bg-space border border-brand-purple/30 flex items-center justify-center text-brand-purple shadow-md shadow-brand-purple/10">
-                <GraduationCap className="w-4 h-4" />
+            <ScrollReveal key={item.title} direction="right" delay={idx * 100} className="relative">
+              <div className="absolute -left-[34px] sm:-left-[50px] top-2 w-9 h-9 rounded-xl bg-gradient-to-br from-brand-violet to-brand-purple flex items-center justify-center text-white shadow-lg shadow-brand-violet/30">
+                <GraduationCap className="w-4 h-4" aria-hidden="true" />
               </div>
 
-              {/* Card Container */}
-              <div className="glass-panel p-6 sm:p-8 rounded-2xl relative group overflow-hidden hover:border-brand-purple/25 transition-colors duration-300">
-                {/* Glowing edge bar */}
-                <div className="absolute left-0 top-0 bottom-0 w-[4px] bg-gradient-to-b from-brand-violet to-brand-purple transform scale-y-0 group-hover:scale-y-100 transition-transform duration-300" />
-                
-                {/* Header */}
+              <article className="card-premium rounded-2xl p-5 sm:p-7">
                 <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
-                  <div className="flex items-center gap-2 text-xs font-mono text-brand-lavender bg-brand-purple/5 px-3 py-1 rounded-full border border-brand-purple/10">
-                    <Calendar className="w-3.5 h-3.5" />
+                  <div className="flex items-center gap-2 text-xs font-mono text-brand-lavender bg-brand-purple/10 px-3 py-1.5 rounded-full border border-brand-purple/20">
+                    <Calendar className="w-3.5 h-3.5" aria-hidden="true" />
                     <span>{item.year}</span>
                   </div>
-                  
-                  <span className={`text-xs px-2.5 py-0.5 rounded-full font-medium ${
-                    item.status.includes("Completed")
-                      ? "bg-emerald-500/10 text-emerald-400 border border-emerald-500/20"
-                      : "bg-brand-violet/10 text-brand-lavender border border-brand-violet/25 animate-pulse"
-                  }`}>
+                  <span
+                    className={`badge ${
+                      item.status.includes("Completed") ? "badge-completed" : "badge-progress"
+                    }`}
+                  >
                     {item.status}
                   </span>
                 </div>
 
-                <h4 className="text-xl sm:text-2xl font-bold text-white mb-1">
-                  {item.title}
-                </h4>
-                <p className="text-sm font-semibold text-gray-300 mb-4">
-                  {item.institution}
-                </p>
-                <p className="text-sm sm:text-base text-gray-400 leading-relaxed mb-6">
-                  {item.description}
-                </p>
+                <h3 className="text-xl sm:text-2xl font-bold text-white mb-1">{item.title}</h3>
+                <p className="text-sm font-semibold text-body mb-3">{item.institution}</p>
+                <p className="text-sm sm:text-base text-body mb-5">{item.description}</p>
 
-                {/* Course Highlights */}
                 <div>
-                  <h5 className="text-xs font-semibold text-gray-500 uppercase tracking-widest mb-3 flex items-center gap-1.5">
-                    <BookOpen className="w-3.5 h-3.5 text-brand-purple" />
+                  <h4 className="text-xs font-semibold text-muted uppercase tracking-widest mb-3 flex items-center gap-1.5">
+                    <BookOpen className="w-3.5 h-3.5 text-brand-purple" aria-hidden="true" />
                     Core Curricular Modules
-                  </h5>
-                  
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-                    {item.highlights.map((highlight, index) => (
-                      <div key={index} className="flex items-start gap-2 text-sm text-gray-300">
-                        <CheckCircle className="w-4 h-4 text-brand-purple shrink-0 mt-0.5" />
+                  </h4>
+                  <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                    {item.highlights.map((highlight) => (
+                      <li key={highlight} className="flex items-start gap-2 text-sm text-body">
+                        <CheckCircle className="w-4 h-4 text-brand-purple shrink-0 mt-0.5" aria-hidden="true" />
                         <span>{highlight}</span>
-                      </div>
+                      </li>
                     ))}
-                  </div>
+                  </ul>
                 </div>
-              </div>
+              </article>
             </ScrollReveal>
           ))}
         </div>
