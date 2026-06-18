@@ -9,23 +9,27 @@ import SocialIconLinks from "./SocialIconLinks";
 import { personal } from "@/lib/data/personal";
 
 export default function About() {
-  const [isFlipped, setIsFlipped] = useState(false);
+  const [isFlipped, setIsFlipped] = useState(() => {
+    if (typeof window === "undefined") return false;
+    return window.location.hash === "#contact";
+  });
   const { identity, about } = personal;
 
   useEffect(() => {
     const handleContactFlip = () => setIsFlipped(true);
     const handleAboutReset = () => setIsFlipped(false);
+    const handleHashChange = () => {
+      setIsFlipped(window.location.hash === "#contact");
+    };
 
     window.addEventListener("trigger-contact-flip", handleContactFlip);
     window.addEventListener("trigger-about-reset", handleAboutReset);
-
-    if (window.location.hash === "#contact") {
-      setIsFlipped(true);
-    }
+    window.addEventListener("hashchange", handleHashChange);
 
     return () => {
       window.removeEventListener("trigger-contact-flip", handleContactFlip);
       window.removeEventListener("trigger-about-reset", handleAboutReset);
+      window.removeEventListener("hashchange", handleHashChange);
     };
   }, []);
 
