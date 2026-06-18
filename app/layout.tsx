@@ -1,22 +1,31 @@
 import type { Metadata } from "next";
-import { Roboto, Roboto_Mono } from "next/font/google";
+import { Plus_Jakarta_Sans, Roboto_Mono } from "next/font/google";
+import { personal } from "@/lib/data/personal";
 import "./globals.css";
 
-const robotoSans = Roboto({
-  variable: "--font-roboto-sans",
+const jakarta = Plus_Jakarta_Sans({
+  variable: "--font-jakarta",
   subsets: ["latin"],
-  weight: ["400", "700"],
+  weight: ["400", "600", "700"],
+  display: "swap",
 });
 
 const robotoMono = Roboto_Mono({
   variable: "--font-roboto-mono",
   subsets: ["latin"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Yehara Kobbegala | Full-Stack Developer & Computer Science Undergraduate",
-  description: "Professional developer portfolio of Yehara Kobbegala. Specialized in scalable full-stack applications, enterprise APIs (Spring Boot, FastAPI), and AI-driven agricultural solutions.",
-  keywords: ["Yehara Kobbegala", "Computer Science Undergraduate Portfolio", "Full-Stack Developer", "IIT Sri Lanka Student", "Computer Science Undergraduate", "Spring Boot", "FastAPI", "React Developer", "AI Developer"],
+  title: personal.seo.title,
+  description: personal.seo.description,
+  keywords: [...personal.seo.keywords],
+};
+
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#04030a",
 };
 
 export default function RootLayout({
@@ -25,11 +34,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${robotoSans.variable} ${robotoMono.variable} scroll-smooth antialiased`}
-    >
-      <body className="min-h-screen bg-bg-space">{children}</body>
+    <html lang="en" className={`${jakarta.variable} ${robotoMono.variable} scroll-smooth antialiased`}>
+      <body className="min-h-screen bg-bg-space text-white">{children}</body>
     </html>
   );
 }

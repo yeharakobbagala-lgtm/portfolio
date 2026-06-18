@@ -1,139 +1,88 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
-import { Menu, X, Code2 } from "lucide-react";
-
-const navLinks = [
-  { label: "Home", href: "#home" },
-  { label: "About", href: "#about" },
-  { label: "Skills", href: "#skills" },
-  { label: "Projects", href: "#projects" },
-  { label: "Education", href: "#education" },
-  { label: "Contact", href: "#contact" },
-];
+import React from "react";
+import { Menu, X } from "lucide-react";
+import { navLinks, personal } from "@/lib/data/personal";
+import { scrollToSection } from "@/lib/scroll-to-section";
+import { useScrollSpy } from "@/lib/use-scroll-spy";
 
 export default function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [activeSection, setActiveSection] = useState("home");
+  const [isOpen, setIsOpen] = React.useState(false);
+  const { activeSection, isScrolled } = useScrollSpy(
+    navLinks.map((link) => link.href)
+  );
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-
-      // Track active section
-      const sections = navLinks.map((link) => link.href.replace("#", ""));
-      let currentSection = "home";
-
-      for (const section of sections) {
-        const element = document.getElementById(section);
-        if (element) {
-          const rect = element.getBoundingClientRect();
-          // If the top of the section is near the middle of the screen
-          if (rect.top <= 200 && rect.bottom >= 200) {
-            currentSection = section;
-            break;
-          }
-        }
-      }
-      setActiveSection(currentSection);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    handleScroll(); // initial call
-
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
     setIsOpen(false);
-    const targetId = href.replace("#", "");
-    const element = document.getElementById(targetId);
-    if (element) {
-      const offset = 80; // height of navbar
-      const bodyRect = document.body.getBoundingClientRect().top;
-      const elementRect = element.getBoundingClientRect().top;
-      const elementPosition = elementRect - bodyRect;
-      const offsetPosition = elementPosition - offset;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth",
-      });
-    }
-
-    // Dispatch events to control the Developer Passport flip state
-    if (href === "#contact") {
-      setTimeout(() => {
-        window.dispatchEvent(new CustomEvent("trigger-contact-flip"));
-      }, 100);
-    } else if (href === "#about") {
-      window.dispatchEvent(new CustomEvent("trigger-about-reset"));
-    }
+    scrollToSection(href);
   };
 
   return (
-    <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? "py-4 bg-bg-space/85 backdrop-blur-md border-b border-white/5 shadow-lg"
-          : "py-6 bg-transparent"
-      }`}
-    >
-      <div className="max-w-7xl mx-auto px-6 flex justify-between items-center relative">
-        {/* Logo */}
-        <a
-          href="#home"
-          onClick={(e) => scrollToSection(e, "#home")}
-          className="flex items-center gap-2.5 font-bold tracking-tight text-white group"
-        >
-          <div className="w-9 h-9 rounded-full bg-gradient-to-tr from-brand-violet to-brand-purple flex items-center justify-center text-white text-base font-extrabold shadow-md shadow-brand-violet/20 group-hover:scale-105 transition-transform duration-300">
-            Y
+    <nav className="fixed top-0 left-0 right-0 z-50 px-4 sm:px-6 pt-4" aria-label="Main navigation">
+      <div
+        className={`container-site rounded-2xl transition-interactive ${
+          isScrolled ? "glass-panel py-3 shadow-[0_8px_40px_rgba(0,0,0,0.45)]" : "py-2 bg-transparent"
+        }`}
+      >
+        <div className="flex justify-between items-center relative">
+          <a
+            href="#home"
+            onClick={(e) => handleNavClick(e, "#home")}
+            className="flex items-center gap-3 font-bold text-white group"
+          >
+            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-violet to-brand-purple flex items-center justify-center text-sm font-bold shadow-lg shadow-brand-violet/30 group-hover:scale-105 transition-interactive">
+              Y
+            </div>
+            <span className="text-base sm:text-lg hidden sm:block">
+              {personal.identity.firstName.toLowerCase()}
+              <span className="text-brand-purple">.online</span>
+            </span>
+          </a>
+
+          <div className="hidden lg:flex items-center gap-1 p-1 rounded-full bg-white/[0.03] border border-white/[0.06]">
+            {navLinks.map((link) => {
+              const isActive = activeSection === link.href.replace("#", "");
+              return (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  onClick={(e) => handleNavClick(e, link.href)}
+                  aria-current={isActive ? "page" : undefined}
+                  className={`px-4 py-2 text-sm font-medium rounded-full transition-interactive ${
+                    isActive
+                      ? "text-white bg-gradient-to-r from-brand-violet to-brand-purple shadow-md"
+                      : "text-muted hover:text-white hover:bg-white/5"
+                  }`}
+                >
+                  {link.label}
+                </a>
+              );
+            })}
           </div>
-          <span className="text-lg tracking-wide font-sans">
-            yehara<span className="text-brand-purple font-semibold">.online</span>
-          </span>
-        </a>
 
-        {/* Desktop Nav Links (Centred) */}
-        <div className="hidden md:flex items-center gap-1 bg-white/5 p-1 rounded-full border border-white/5 backdrop-blur-sm md:absolute md:left-1/2 md:-translate-x-1/2">
-          {navLinks.map((link) => {
-            const isActive = activeSection === link.href.replace("#", "");
-            return (
-              <a
-                key={link.href}
-                href={link.href}
-                onClick={(e) => scrollToSection(e, link.href)}
-                className={`relative px-5 py-2 text-sm font-medium transition-all duration-300 rounded-full ${
-                  isActive
-                    ? "text-white bg-gradient-to-r from-brand-violet to-brand-purple shadow-md"
-                    : "text-gray-400 hover:text-white"
-                }`}
-              >
-                {link.label}
-              </a>
-            );
-          })}
+          <a
+            href="#contact"
+            onClick={(e) => handleNavClick(e, "#contact")}
+            className="hidden md:inline-flex btn-primary !py-2 !px-5 !text-sm"
+          >
+            Hire Me
+          </a>
+
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="lg:hidden p-2 rounded-lg text-muted hover:text-white hover:bg-white/5 transition-interactive"
+            aria-label={isOpen ? "Close menu" : "Open menu"}
+            aria-expanded={isOpen}
+          >
+            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
         </div>
-
-        {/* Right spacing to balance centering (no button) */}
-        <div className="hidden md:block w-32" />
-
-        {/* Mobile Menu Button */}
-        <button
-          onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden text-gray-300 hover:text-white focus:outline-none"
-          aria-label="Toggle menu"
-        >
-          {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-        </button>
       </div>
 
-      {/* Mobile Nav Drawer */}
       <div
-        className={`fixed inset-0 top-[73px] z-40 bg-bg-space/95 backdrop-blur-lg border-t border-white/5 transition-all duration-300 md:hidden flex flex-col justify-start p-8 gap-6 ${
-          isOpen ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-full pointer-events-none"
+        className={`lg:hidden fixed inset-x-4 top-[88px] z-40 glass-panel rounded-2xl p-6 flex flex-col gap-3 transition-interactive ${
+          isOpen ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-4 pointer-events-none"
         }`}
       >
         {navLinks.map((link) => {
@@ -142,22 +91,15 @@ export default function Navbar() {
             <a
               key={link.href}
               href={link.href}
-              onClick={(e) => scrollToSection(e, link.href)}
-              className={`text-xl font-semibold tracking-wide py-2 transition-all duration-300 ${
-                isActive ? "text-brand-purple pl-2 border-l-2 border-brand-purple" : "text-gray-400 hover:text-white"
+              onClick={(e) => handleNavClick(e, link.href)}
+              className={`text-lg font-medium py-2.5 px-3 rounded-xl transition-interactive ${
+                isActive ? "text-white bg-brand-purple/20" : "text-muted hover:text-white"
               }`}
             >
               {link.label}
             </a>
           );
         })}
-        <a
-          href="#contact"
-          onClick={(e) => scrollToSection(e, "#contact")}
-          className="mt-4 w-full py-3 text-center rounded-xl font-medium text-white bg-gradient-to-r from-brand-violet to-brand-purple shadow-lg shadow-brand-violet/20"
-        >
-          Get in Touch
-        </a>
       </div>
     </nav>
   );
