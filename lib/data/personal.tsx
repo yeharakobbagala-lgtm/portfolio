@@ -55,6 +55,7 @@ export const personal = {
   identity: {
     fullName: "Yehara Kobbegala",
     firstName: "Yehara",
+    lastName: "Kobbegala",
     domain: "yehara.online",
     profileImage: "/profile.png",
     classification: "Computer Science Undergraduate",
