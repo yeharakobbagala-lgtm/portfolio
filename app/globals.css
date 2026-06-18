@@ -210,10 +210,12 @@ body {
 
 /* Typography */
 .text-gradient-primary {
+  display: inline-block;
   background: linear-gradient(135deg, #ffffff 0%, #e9d5ff 50%, #b55fe6 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  padding-bottom: 0.05em;
 }
 
 .text-body {

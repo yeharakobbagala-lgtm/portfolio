@@ -24,27 +24,71 @@ export default function Hero() {
   const LinkedinIcon = linkedin?.icon;
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center pt-28 pb-20 sm:pb-24 overflow-hidden">
+    <section id="home" className="relative min-h-screen flex items-center pt-28 pb-20 sm:pb-24 overflow-x-clip overflow-y-visible">
       <div className="container-site relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 sm:gap-16 lg:gap-24 xl:gap-28 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-[auto_1fr] lg:grid-rows-[auto_auto_auto] gap-x-10 sm:gap-x-12 xl:gap-x-16 gap-y-6 lg:gap-y-4">
+          {/* Badge + hello */}
           <ScrollReveal
             direction="left"
             delay={100}
-            className="order-1 lg:order-2 text-center lg:text-left mb-4 sm:mb-6 lg:mb-0"
+            className="order-1 lg:col-start-2 lg:row-start-1 text-center lg:text-left"
           >
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-mono uppercase tracking-widest text-emerald-300 bg-emerald-500/10 border border-emerald-500/25 mb-5">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-mono uppercase tracking-widest text-emerald-300 bg-emerald-500/10 border border-emerald-500/25 mb-4 sm:mb-5">
               <Sparkles className="w-3.5 h-3.5" aria-hidden="true" />
               {identity.availability}
             </div>
-
-            <p className="text-brand-lavender font-mono text-xs sm:text-sm tracking-[0.2em] uppercase mb-4 sm:mb-5">
+            <p className="text-brand-lavender font-mono text-xs sm:text-sm tracking-[0.2em] uppercase">
               Hello, I&apos;m
             </p>
-            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-[5.75rem] 2xl:text-9xl font-bold tracking-tight leading-[1.05] text-gradient-primary">
-              {identity.fullName}
-            </h1>
+          </ScrollReveal>
 
-            <p className="text-body text-base sm:text-lg mt-5 max-w-xl mx-auto lg:mx-0">
+          {/* Profile photo + name — grouped and centered with each other */}
+          <div className="order-2 flex flex-col items-center gap-8 sm:flex-row sm:justify-center sm:items-center lg:contents">
+            <ScrollReveal
+              direction="right"
+              delay={150}
+              className="lg:col-start-1 lg:row-start-2 flex justify-center lg:justify-start self-center shrink-0"
+            >
+              <div className="relative">
+                <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-brand-violet/25 to-brand-purple/15 blur-3xl scale-110 animate-glow-pulse" />
+                <div className="relative w-56 h-56 sm:w-72 sm:h-72 lg:w-[22rem] lg:h-[22rem] rounded-full p-[5px] bg-gradient-to-br from-brand-violet via-brand-purple to-brand-lavender shadow-[0_0_60px_rgba(124,58,237,0.22)] group">
+                  <div className="relative w-full h-full rounded-full overflow-hidden border-2 border-white/10 bg-bg-elevated">
+                    <Image
+                      src={identity.profileImage}
+                      alt={identity.fullName}
+                      fill
+                      priority
+                      className="object-cover group-hover:scale-105 transition-interactive"
+                      sizes="(max-width: 640px) 224px, (max-width: 1024px) 288px, 352px"
+                    />
+                  </div>
+                </div>
+              </div>
+            </ScrollReveal>
+
+            <ScrollReveal
+              direction="left"
+              delay={200}
+              className="lg:col-start-2 lg:row-start-2 self-center text-center lg:text-left min-w-0 overflow-visible"
+            >
+              <h1 className="font-bold tracking-tight leading-[1.04] overflow-visible">
+                <span className="block text-gradient-primary text-[clamp(3.25rem,10vw,6rem)] sm:text-[clamp(3.75rem,9vw,6.75rem)] lg:text-[clamp(4.25rem,7.5vw,6.5rem)] xl:text-[7rem]">
+                  {identity.firstName}
+                </span>
+                <span className="block text-gradient-primary text-[clamp(3rem,9vw,5.5rem)] sm:text-[clamp(3.5rem,8vw,6.25rem)] lg:text-[clamp(3.75rem,6.5vw,6rem)] xl:text-[6.5rem]">
+                  {identity.lastName}
+                </span>
+              </h1>
+            </ScrollReveal>
+          </div>
+
+          {/* Roles, buttons, social */}
+          <ScrollReveal
+            direction="left"
+            delay={250}
+            className="order-4 lg:col-start-2 lg:row-start-3 text-center lg:text-left"
+          >
+            <p className="text-body text-base sm:text-lg max-w-xl mx-auto lg:mx-0">
               {identity.roles.join(" · ")}
             </p>
 
@@ -90,28 +134,6 @@ export default function Hero() {
                   <Mail className="w-4.5 h-4.5" />
                 </a>
               )}
-            </div>
-          </ScrollReveal>
-
-          <ScrollReveal
-            direction="right"
-            delay={200}
-            className="flex justify-start pl-2 sm:pl-4 lg:pl-6 xl:pl-8 order-2 lg:order-1"
-          >
-            <div className="relative">
-              <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-brand-violet/25 to-brand-purple/15 blur-3xl scale-110 animate-glow-pulse" />
-              <div className="relative w-56 h-56 sm:w-72 sm:h-72 lg:w-80 lg:h-80 rounded-full p-[5px] bg-gradient-to-br from-brand-violet via-brand-purple to-brand-lavender shadow-[0_0_60px_rgba(124,58,237,0.22)] group">
-                <div className="relative w-full h-full rounded-full overflow-hidden border-2 border-white/10 bg-bg-elevated">
-                  <Image
-                    src={identity.profileImage}
-                    alt={identity.fullName}
-                    fill
-                    priority
-                    className="object-cover group-hover:scale-105 transition-interactive"
-                    sizes="(max-width: 640px) 224px, (max-width: 1024px) 288px, 320px"
-                  />
-                </div>
-              </div>
             </div>
           </ScrollReveal>
         </div>
