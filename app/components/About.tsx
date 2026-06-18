@@ -79,10 +79,10 @@ export default function About() {
           <div className="lg:col-span-5 flex justify-center items-center relative">
             <div id="contact" className="absolute -top-32 pointer-events-none" />
 
-            <ScrollReveal direction="left" delay={150} className="w-full max-w-sm min-h-[420px] sm:min-h-[395px] perspective-1000">
-              <div className="w-full h-full relative preserve-3d">
+            <ScrollReveal direction="left" delay={150} className="w-full max-w-sm perspective-1000">
+              <div className="relative w-full min-h-[480px] sm:min-h-[500px] preserve-3d">
                 <div
-                  className={`absolute inset-0 w-full h-full backface-hidden glass-panel p-5 rounded-2xl border border-brand-purple/30 shadow-[0_0_20px_rgba(181,95,230,0.08)] hover:border-brand-purple/50 transition-interactive flex flex-col justify-between ${
+                  className={`absolute inset-0 w-full min-h-[480px] sm:min-h-[500px] backface-hidden glass-panel p-5 rounded-2xl border border-brand-purple/30 shadow-[0_0_20px_rgba(181,95,230,0.08)] hover:border-brand-purple/50 transition-interactive flex flex-col justify-between ${
                     isFlipped
                       ? "rotate-y-180 opacity-0 pointer-events-none z-0"
                       : "rotate-y-0 opacity-100 pointer-events-auto z-10"
@@ -91,16 +91,16 @@ export default function About() {
                   <div>
                     <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-brand-purple/15 to-brand-violet/15 blur-lg pointer-events-none" />
 
-                    <div className="flex justify-between items-center border-b border-white/10 pb-3 mb-3">
-                      <div className="flex items-center gap-2">
-                        <Cpu className="w-4 h-4 text-brand-purple animate-pulse" />
-                        <span className="font-mono text-[9px] text-muted uppercase tracking-widest">
+                    <div className="flex justify-between items-center gap-3 border-b border-white/10 pb-3 mb-3">
+                      <div className="flex items-center gap-2 min-w-0">
+                        <Cpu className="w-4 h-4 text-brand-purple animate-pulse shrink-0" />
+                        <span className="font-mono text-[9px] text-muted uppercase tracking-widest truncate">
                           Developer Passport
                         </span>
                       </div>
-                      <div className="flex items-center gap-1.5 bg-emerald-500/10 border border-emerald-500/20 px-2 py-0.5 rounded-full">
+                      <div className="flex items-center gap-1.5 bg-emerald-500/10 border border-emerald-500/20 px-2 py-0.5 rounded-full shrink-0">
                         <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse shrink-0" />
-                        <span className="text-[8px] font-mono text-emerald-400 uppercase tracking-wider font-semibold">
+                        <span className="text-[8px] font-mono text-emerald-400 uppercase tracking-wider font-semibold whitespace-nowrap">
                           {identity.availability}
                         </span>
                       </div>
@@ -164,39 +164,42 @@ export default function About() {
                 </div>
 
                 <div
-                  className={`absolute inset-0 w-full h-full backface-hidden glass-panel p-5 rounded-2xl border border-brand-purple/30 shadow-[0_0_20px_rgba(181,95,230,0.08)] transition-interactive flex flex-col justify-between ${
+                  className={`absolute inset-0 w-full min-h-[480px] sm:min-h-[500px] backface-hidden glass-panel p-5 rounded-2xl border border-brand-purple/30 shadow-[0_0_20px_rgba(181,95,230,0.08)] transition-interactive flex flex-col justify-between ${
                     isFlipped
                       ? "rotate-y-0 opacity-100 pointer-events-auto z-10"
                       : "rotate-y-minus-180 opacity-0 pointer-events-none z-0"
                   }`}
                 >
                   <div>
-                    <div className="flex justify-between items-center border-b border-white/10 pb-3 mb-2.5">
-                      <div className="flex items-center gap-1.5">
-                        <Mail className="w-3.5 h-3.5 text-brand-purple" />
-                        <span className="font-mono text-[9px] text-muted uppercase tracking-widest">
+                    <div className="flex items-center justify-between gap-3 border-b border-white/10 pb-3 mb-3">
+                      <div className="flex items-center gap-2 min-w-0">
+                        <Mail className="w-4 h-4 text-brand-purple shrink-0" />
+                        <span className="font-mono text-[9px] text-muted uppercase tracking-widest truncate">
                           Send a Message
                         </span>
                       </div>
-                      <div className="flex items-center gap-1.5 bg-emerald-500/10 border border-emerald-500/20 px-2 py-0.5 rounded-full mr-2">
-                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse shrink-0" />
-                        <span className="text-[8px] font-mono text-emerald-400 uppercase tracking-wider font-semibold">
-                          {identity.availability}
-                        </span>
+                      <div className="flex items-center gap-2 shrink-0">
+                        <div className="flex items-center gap-1.5 bg-emerald-500/10 border border-emerald-500/20 px-2 py-0.5 rounded-full">
+                          <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse shrink-0" />
+                          <span className="text-[8px] font-mono text-emerald-400 uppercase tracking-wider font-semibold whitespace-nowrap">
+                            {identity.availability}
+                          </span>
+                        </div>
+                        <button
+                          onClick={() => setIsFlipped(false)}
+                          className="p-1 rounded-lg hover:bg-white/5 text-muted hover:text-white transition-interactive cursor-pointer shrink-0"
+                          title="View Bio Card"
+                          aria-label="Close contact form"
+                        >
+                          <X className="w-3.5 h-3.5" />
+                        </button>
                       </div>
-                      <button
-                        onClick={() => setIsFlipped(false)}
-                        className="p-1 rounded-lg hover:bg-white/5 text-muted hover:text-white transition-interactive cursor-pointer"
-                        title="View Bio Card"
-                      >
-                        <X className="w-3.5 h-3.5" />
-                      </button>
                     </div>
 
                     <ContactForm onSuccess={() => setIsFlipped(false)} />
                   </div>
 
-                  <div className="border-t border-white/10 pt-3 mt-auto flex items-center justify-between z-10 relative">
+                  <div className="border-t border-white/10 pt-3 mt-4 flex items-center justify-between z-10 relative">
                     <SocialIconLinks />
                     <button
                       onClick={() => setIsFlipped(false)}
