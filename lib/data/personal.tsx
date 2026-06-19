@@ -56,7 +56,7 @@ export const personal = {
     fullName: "Yehara Kobbegala",
     firstName: "Yehara",
     lastName: "Kobbegala",
-    domain: "yehara.online",
+    domain: "yeharakobbegala.online",
     profileImage: "/profile.png",
     classification: "Computer Science Undergraduate",
     affiliation: "IIT Sri Lanka / Westminster",

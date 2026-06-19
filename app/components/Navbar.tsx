@@ -35,7 +35,7 @@ export default function Navbar() {
               Y
             </div>
             <span className="text-base sm:text-lg hidden sm:block">
-              {personal.identity.firstName.toLowerCase()}
+              {personal.identity.domain.replace(".online", "")}
               <span className="text-brand-purple">.online</span>
             </span>
           </a>

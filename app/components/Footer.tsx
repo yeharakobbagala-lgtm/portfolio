@@ -10,7 +10,7 @@ export default function Footer() {
       <div className="container-site flex flex-col sm:flex-row items-center justify-between gap-6">
         <div className="text-center sm:text-left">
           <p className="font-mono text-lg font-bold text-white">
-            {identity.firstName.toLowerCase()}<span className="text-brand-purple">.online</span>
+            {identity.domain.replace(".online", "")}<span className="text-brand-purple">.online</span>
           </p>
           <p className="text-sm text-muted mt-2 max-w-sm">{footer.tagline}</p>
         </div>
